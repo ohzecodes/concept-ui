@@ -7,23 +7,10 @@
 ## Install
 
 ```bash
-npm install --save concept-ui
+npm install concept-ui
 ```
 
 ## Usage
-
-```jsx
-import React, { Component } from 'react'
-
-import MyComponent from 'concept-ui'
-import 'concept-ui/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
-```
 
 ## License
 
