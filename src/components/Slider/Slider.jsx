@@ -10,16 +10,18 @@ import {
   WidthWrapper
 } from './StyledComponents'
 
+/**
+ * This is a slider component that seamlessly integrates form and function, promising an enhanced user experience across a spectrum of applications.
+ * Effortlessly adaptable and visually striking, the slider offers intuitive navigation through a spectrum of options, inviting users to explore and select with utmost ease.
+ * Its frictionless motion and customizable design make it an ideal choice for a myriad of contexts, from fine-tuning settings to elegantly browsing image galleries.
+ */
 export const Slider = ({
   children,
   Page,
   setPage,
   pageElementCount,
   style,
-  width,
   variant,
-  // moveBackBtn,
-  // moveForwardBtn,
   moveForwardStyle,
   moveBackStyle,
   moveForwardIcon,
@@ -46,7 +48,6 @@ export const Slider = ({
         setPage(maxPages)
         return
       }
-
       setPage(Page - 1)
     }
   }
@@ -86,7 +87,7 @@ export const Slider = ({
           borderColor={activeMarkerColor}
           onClick={() => setPage(e + 1)}
           color={Page === e + 1 ? activeMarkerColor : 'transparent'}
-        ></PageChangeButtons>
+        />
       ))
     : null
 
@@ -126,7 +127,7 @@ export const Slider = ({
   )
 
   return (
-    <WidthWrapper width={width} style={style?.WidthWrapper}>
+    <WidthWrapper width='fit-content' style={style?.WidthWrapper}>
       {variant.toLowerCase() === 'children-alone'
         ? childrenAlone
         : childrenWithMoveButtons}
@@ -143,32 +144,72 @@ function greaterOrEqualsOne(props, propName, componentName) {
 }
 
 Slider.propTypes = {
+  /**
+   * Page: a state component, that is greater than or equal to 1
+   */
   Page: greaterOrEqualsOne,
+  /**
+   * setPage: a function that modifies the page variable
+   */
   setPage: PropTypes.func.isRequired,
+  /**
+   * Children are an array of elements the resultant of map function
+   */
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
-
+  /**
+   * a count of elements per page
+   */
   pageElementCount: PropTypes.number,
+  /**
+   * the style is an object  of various element that yuo can style
+   */
   style: PropTypes.shape({
     WidthWrapper: PropTypes.object,
     markerWrapper: PropTypes.object,
     HorizontalWrapper: PropTypes.object
   }),
+  /**
+   * variant defines where the move buttons are;
+   * marker alone: move buttons are next to the children
+   * children alone: move buttons are next to the marker
+   */
   variant: PropTypes.oneOf(['marker-alone', 'children-alone']),
+  /**
+   * changes the color of active marker by using this
+   */
   activeMarkerColor: PropTypes.string,
+  /**
+   *  toggles the functionalituy where the slider loops arround the array
+   */
   uniDirectional: PropTypes.bool,
+  /**
+   * styles for the button move forward button
+   */
   moveForwardStyle: PropTypes.object,
+  /**
+   * styles for the button move back button
+   */
   moveBackStyle: PropTypes.object,
+  /**
+   * Icon in the move forward button
+   */
   moveForwardIcon: PropTypes.element,
+  /**
+   * Icon in the move back button
+   */
   moveBackIcon: PropTypes.element,
+  /**
+   * toggles that visibility of the marker
+   */
   showMarkers: PropTypes.bool
 }
 
 Slider.defaultProps = {
   uniDirectional: false,
-  activeMarkerColor: '#2d3142',
+  activeMarkerColor: 'grey',
   pageElementCount: 1,
   variant: 'marker-alone',
-  width: '500px',
+
   showMarkers: true,
   moveForwardIcon: <span>&gt;</span>,
   moveBackIcon: <span>&lt;</span>

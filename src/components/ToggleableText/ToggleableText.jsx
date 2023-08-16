@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-
+/**
+ * This is a Toggleable Text Component tailored to optimize your content display for longer texts. Seamlessly integrating into your web interface or application, this component empowers users to toggle the visibility of extended text segments with a simple click. Streamline the presentation of lengthy content without sacrificing depth or detail. With an intuitive design that ensures smooth interaction, users can effortlessly expand or collapse text sections, maintaining a clean and organized layout.
+ */
 export const ToggleableText = ({
   children,
   delimeter,
@@ -8,7 +10,7 @@ export const ToggleableText = ({
   element,
   ...rest
 }) => {
-  showingNumberOfWords ||= children.length 
+  showingNumberOfWords ||= children.length
   // logical or assignment: check if value is false and assigns instead
   const [less, setLess] = useState(true)
   const CompressString = children
@@ -38,15 +40,29 @@ export const ToggleableText = ({
 }
 
 ToggleableText.propTypes = {
+  /**
+   * The text for the element
+   */
   children: PropTypes.string.isRequired,
+  /**
+   * the number of words to show
+   */
   showingNumberOfWords: PropTypes.number.isRequired,
+  /**
+   * the character on which the element should split
+   */
   delimeter: PropTypes.string,
+  /**
+   * the tag that you want to use for the text
+   */
   element: PropTypes.element,
+  /**
+   * style of the text
+   */
   style: PropTypes.object
 }
 
 ToggleableText.defaultProps = {
   delimeter: ' ',
-  // eslint-disable-next-line react/self-closing-comp
-  element: <p></p>
+  element: <p />
 }

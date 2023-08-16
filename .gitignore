@@ -3,7 +3,8 @@
 
 # dependencies
 node_modules
-
+.storybook
+*/stories
 
 **/src/components/ObjectRepresentation
 # builds
