@@ -13,7 +13,10 @@ Given the opportunity to revisit past projects, I would integrate this library i
 npm install concept-ui styled-components@6.0.5"
 ```
 
-## Usage   
+## Usage  
+
+Documentation is at https://ohzecodes.github.io/concept-ui/
+
 ## License
 
 MIT © [ohzecodes](https://github.com/ohzecodes)
