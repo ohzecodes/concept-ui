@@ -10,7 +10,7 @@ Given the opportunity to revisit past projects, I would integrate this library i
 ## Install
 
 ```bash
-npm install concept-ui styled-components@6.0.5"
+npm install concept-ui styled-components@6.0.5
 ```
 
 ## Usage  
