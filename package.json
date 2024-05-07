@@ -69,7 +69,8 @@
     "dist"
   ],
   "dependencies": {
-    "react-is": "^18.2.0"
+    "react-is": "^18.2.0",
+    "sb": "^8.0.10"
   },
   "eslintConfig": {
     "extends": [

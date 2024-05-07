@@ -10,7 +10,6 @@ export const ToggleableText = ({
   element,
   ...rest
 }) => {
-  showingNumberOfWords ||= children.length
   // logical or assignment: check if value is false and assigns instead
   const [less, setLess] = useState(true)
   const CompressString = children
@@ -64,5 +63,6 @@ ToggleableText.propTypes = {
 
 ToggleableText.defaultProps = {
   delimeter: ' ',
+  showingNumberOfWords: 10,
   element: <p />
 }
