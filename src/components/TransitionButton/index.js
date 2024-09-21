@@ -1,7 +1,7 @@
 import { DrawButton, SpinCircleButton, SpinSquareButton } from './button'
 import PropTypes from 'prop-types'
 import React from 'react'
-const TransitionButton = ({ type, ...rest }) => {
+export const TransitionButton = ({ type, ...rest }) => {
   const buttonVariants = {
     spin: <SpinCircleButton {...rest} />,
     draw: <DrawButton {...rest} />,
@@ -15,4 +15,3 @@ TransitionButton.defaultProps = {
 TransitionButton.PropTypes = {
   type: PropTypes.oneOf(['spin', 'draw', 'spinSquare'])
 }
-export default TransitionButton

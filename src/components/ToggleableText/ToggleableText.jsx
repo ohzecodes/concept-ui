@@ -10,8 +10,10 @@ export const ToggleableText = ({
   element,
   ...rest
 }) => {
-  // logical or assignment: check if value is false and assigns instead
   const [less, setLess] = useState(true)
+  if (children.split(delimeter).length <= showingNumberOfWords) {
+    return children
+  }
   const CompressString = children
     .split(delimeter)
     .slice(0, showingNumberOfWords)
